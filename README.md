@@ -1,7 +1,7 @@
 # Mini LLM Chatbot Projektplan (Fra bunden)
 
 Denne projektplan beskriver, hvordan man bygger en **lille transformer-baseret chatbot**
-helt fra bunden over ca. ~3 måneder med ~10 timer om ugen.
+helt fra bunden over ca. 3 måneder med ~10 timer om ugen.
 
 ---
 
