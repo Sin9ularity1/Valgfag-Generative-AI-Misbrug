@@ -1,13 +1,19 @@
 # AI Chatbot Project
 
-Welcome to my project documentation.
+Velkommen til mit skoleprojekt.
 
 ## About
-This project explores building a local AI companion chatbot using Python.
+Dette projekt handler om at udvikle en lokal AI-chatbot med Python
 
 ## Author
-Reuben
+Reuben Badham
 
-## Journal
-- Week 1: Project setup
+## Uddannelse
+IT-sikkerhed
+
+## Projektets inhold
+
+This project was created to give me an oportunity to lean the fundamentals of building an AI model from scratch. The goal is to create a semi functional AI chatbot using 
+
+
 
