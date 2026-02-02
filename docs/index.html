@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot Projekt</title>
+    <title>AI & IT-sikkerhed Projekt</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <!-- NAVBAR -->
 <header>
     <nav>
-        <div class="logo">AI Chatbot Projekt</div>
+        <div class="logo">AI & IT-sikkerhed Projekt</div>
         <ul class="nav-links">
             <li><a href="index.html">Hjem</a></li>
             <li><a href="about.html">Om</a></li>
@@ -23,28 +23,32 @@
 <main>
     <section id="om">
         <h1>Velkommen</h1>
-        <p>Velkommen til mit skoleprojekt omkring udviklingen af en lokal AI-chatbot.</p>
-        <p>Projektet gennemføres over ca. 3 måneder med ca. 10 timers arbejde om ugen og giver en praktisk forståelse for opbygning af AI-modeller, tokenisering og transformer-arkitektur.</p>
+        <p>Velkommen til mit skoleprojekt omkring <strong>misbrug af generativ AI i IT-sikkerhed</strong>.</p>
+        <p>Projektet undersøger, hvordan AI kan anvendes i cyberangreb som phishing, social engineering, malware-generering og prompt manipulation, og analyserer én valgt angrebstype dybdegående.</p>
     </section>
 
     <section id="teknologier">
-        <h2>Teknologier</h2>
+        <h2>Fokusområder og teknologier</h2>
         <ul>
-            <li><strong>Python</strong> – programmering og scripting</li>
-            <li><strong>NumPy</strong> – grundlæggende matematik og datahåndtering</li>
-            <li><strong>PyTorch</strong> – træning af modellen (valgfrit, men anbefalet)</li>
-            <li><strong>Ingen eksterne LLM’er</strong> – alt er udviklet lokalt fra bunden</li>
+            <li>Analyse af AI-genereret phishing</li>
+            <li>Social engineering ved brug af AI</li>
+            <li>AI-assisteret malware</li>
+            <li>Prompt injection og manipulation</li>
+            <li>Deepfakes og identitetsmisbrug</li>
+            <li>Automatiseret reconnaissance</li>
+            <li>Python og eventuel lokal AI-model til demonstration</li>
         </ul>
     </section>
 
     <section id="maal">
         <h2>Projektmål</h2>
         <ul>
-            <li>Bygge en <strong>transformer-baseret sprogmodel</strong> (1M–10M parametre)</li>
-            <li>Implementere en <strong>Byte-Pair Encoding (BPE)</strong> tokenizer</li>
-            <li>Forberede og behandle tekstdatasæt</li>
-            <li>Udvikle et simpelt chat-interface til interaktion med modellen</li>
-            <li>Lære de tekniske og praktiske aspekter af at bygge en AI fra bunden</li>
+            <li>Undersøge hvordan generativ AI kan anvendes i cyberangreb</li>
+            <li>Identificere centrale trusselsvektorer relateret til AI</li>
+            <li>Analysere konkrete eksempler på AI-baseret misbrug</li>
+            <li>Udvikle en simpel lokal AI-model som demonstrationsværktøj (valgfrit)</li>
+            <li>Gennemføre en dybdegående analyse af én angrebstype</li>
+            <li>Diskutere defensive strategier og modforanstaltninger</li>
         </ul>
     </section>
 
@@ -59,83 +63,47 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1–2</td><td>Implementering af BPE tokenizer</td><td>tokenizer.py, vocab.json</td></tr>
-                <tr><td>3–4</td><td>Datasæt indsamling og forbehandling</td><td>dataset.py, train_data.npy</td></tr>
-                <tr><td>5–7</td><td>Opbygning af lille transformer</td><td>model.py</td></tr>
-                <tr><td>8–10</td><td>Træningsloop og evaluering</td><td>train.py, model.pt</td></tr>
-                <tr><td>11</td><td>Inferens pipeline og tekstgenerering</td><td>generate.py</td></tr>
-                <tr><td>12</td><td>Simpelt chat-interface</td><td>chat.py</td></tr>
+                <tr><td>1–2</td><td>Research: typer af AI-misbrug</td><td>Oversigt over trusler</td></tr>
+                <tr><td>3–4</td><td>Indsamling og analyse af eksempler</td><td>Dokumentation af cases</td></tr>
+                <tr><td>5–6</td><td>Valg af dybdegående angreb</td><td>Problemformulering og plan</td></tr>
+                <tr><td>7–9</td><td>Teknisk analyse af valgt angrebstype</td><td>Rapport, diagrammer, skitser</td></tr>
+                <tr><td>10–11</td><td>Valgfrit: Demonstration via lokal AI-model</td><td>Enkel AI-model</td></tr>
+                <tr><td>12</td><td>Konklusion og defensive strategier</td><td>Endelig rapport og præsentation</td></tr>
             </tbody>
         </table>
     </section>
 
     <section id="metode">
         <h2>Metode</h2>
-        <p>Projektet udvikles iterativt med fokus på små delmål. Hver komponent udvikles separat og integreres løbende.</p>
+        <p>Projektet gennemføres som en kombination af analyse og praktisk demonstration. Fokus er på at forstå trusler, analysere eksempler og diskutere modforanstaltninger.</p>
         <ul>
-            <li>Eksperimentel udvikling</li>
-            <li>Løbende dokumentation</li>
-            <li>Test og evaluering undervejs</li>
+            <li>Kortlægning af AI-misbrugsmetoder</li>
+            <li>Teknisk analyse af én valgt angrebstype</li>
+            <li>Demonstration via lokal AI-model (valgfrit)</li>
+            <li>Løbende dokumentation og refleksion</li>
         </ul>
 
         <h3>Begrænsninger</h3>
-        <p>Projektet er begrænset af hardware, tid og modelstørrelse. Fokus er på læring og forståelse frem for maksimal performance.</p>
+        <p>Projektet er begrænset af tid, ressourcer og adgang til data. Fokus er på analyse og forståelse frem for udvikling af avancerede AI-systemer.</p>
 
         <h3>Ekstra Mål (Valgfrit)</h3>
         <ul>
-            <li>LoRA fine-tuning</li>
-            <li>Grafisk brugerinterface (GUI)</li>
-            <li>Hukommelsesbuffer til modelinteraktion</li>
-            <li>Destillering af modellen for optimering</li>
-            <li>Justering af emotionelle og stilistiske indstillinger</li>
+            <li>Simulere forskellige angrebsscenarier</li>
+            <li>Evaluere defensive strategier</li>
+            <li>Skabe visualiseringer af AI-misbrug</li>
+            <li>Reflektere over etiske aspekter</li>
         </ul>
     </section>
 
     <section id="læring">
-        <h2>Forventet Læringsudbytte</h2>
+        <h2>Overordnede Læringsmål</h2>
         <ul>
-            <li>Dybtgående forståelse af tokenisering</li>
-            <li>Kendskab til transformer-arkitektur</li>
-            <li>Evnen til at bygge et neuralt netværk fra bunden</li>
-            <li>Forståelse af træningsdynamikker</li>
-            <li>Implementering af en minimal, funktionel sprogmodel</li>
-        </ul>
-
-        
-        <h2>Læringsmål</h2>
-    
-        <h3>AI & Machine Learning</h3>
-        <ul>
-            <li>Forklare hvordan tokenisering fungerer (BPE) og selv implementere en simpel tokenizer.</li>
-            <li>Redegøre for transformer-arkitekturens hoveddele (embeddings, attention, feed-forward, layer normalization).</li>
-            <li>Forklare hvordan en sprogmodel trænes (loss, backpropagation, epochs).</li>
-            <li>Implementere en lille transformer-model fra bunden.</li>
-            <li>Forklare forskellen mellem træning og inferens.</li>
-        </ul>
-    
-        <h3>Programmering</h3>
-        <ul>
-            <li>Udvikle et større Python-projekt struktureret i moduler.</li>
-            <li>Arbejde med NumPy-arrays og tensors.</li>
-            <li>Bruge PyTorch til at bygge og træne neurale netværk.</li>
-            <li>Implementere egne træningsloops.</li>
-            <li>Arbejde med filformater (json, npy, pt).</li>
-        </ul>
-    
-        <h3>IT-sikkerhed & ansvarlig AI</h3>
-        <ul>
-            <li>Reflektere over datasæt, bias og modelbegrænsninger.</li>
-            <li>Forstå sikkerhedsrisici ved lokale AI-modeller.</li>
-            <li>Diskutere etiske aspekter ved AI-chatbots.</li>
-            <li>Forklare hvordan simple AI-systemer kan misbruges eller manipuleres.</li>
-        </ul>
-    
-        <h3>Projektarbejde</h3>
-        <ul>
-            <li>Planlægge et teknisk projekt med milepæle.</li>
-            <li>Dokumentere kode og proces løbende.</li>
-            <li>Arbejde iterativt med fejlretning og forbedringer.</li>
-            <li>Bruge GitHub til versionskontrol.</li>
+            <li>Forstå hvordan generativ AI kan misbruges i cyberangreb</li>
+            <li>Analysere sikkerhedsrisici ved AI-systemer</li>
+            <li>Identificere angrebsmetoder relateret til generativ AI</li>
+            <li>Gennemføre teknisk analyse af én angrebstype</li>
+            <li>Reflektere over defensive strategier</li>
+            <li>Dokumentere et IT-sikkerhedsprojekt struktureret</li>
         </ul>
     </section>
 
@@ -144,7 +112,7 @@
         <p><strong>Reuben Badham</strong></p>
         <p>Uddannelse: IT-sikkerhed</p>
         <p>Lokation: Danmark</p>
-        <p>Formål: Praktisk forståelse af AI-modeller, transformer-arkitektur og udvikling af lokale AI-løsninger</p>
+        <p>Formål: Analysere AI-misbrug i cyberangreb og undersøge IT-sikkerhedsaspekter ved generativ AI</p>
     </section>
 </main>
 
