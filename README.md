@@ -1,173 +1,103 @@
-# Mini LLM Chatbot Projektplan (Fra bunden)
+# Analyse af misbrug af generative AI i IT-sikkerhed
 
-Denne projektplan beskriver, hvordan man bygger en **lille transformer-baseret chatbot**
-helt fra bunden over ca. 3 måneder med ~10 timer om ugen.
+Denne projektplan beskriver, hvordan man undersøger **misbrug af generativ AI** i cyberangreb og sikkerhedsrisici, med mulighed for at demonstrere et konkret eksempel via en lokal AI-model.
 
 ---
 
 ## 1. Projektoversigt
 
-**Mål:**  
-At bygge en **lille transformer-baseret sprogmodel** (1M–10M parametre), som kan lave basal tekstgenerering og chatlignende svar.
-
 **Problemformulering:**  
-Hvordan kan man bygge en lokal AI-chatbot fra bunden, og hvilke tekniske udfordringer opstår undervejs?
+Hvordan kan generativ AI misbruges i cyberangreb, og hvilke sikkerhedsmæssige udfordringer skaber dette for moderne IT-systemer?
 
-**Teknologier:**
-- **Python**
-- **NumPy** (grundlæggende matematik)
-- **PyTorch** (valgfrit, men anbefalet til træning)
-- **Ingen eksterne LLM’er**
+Projektet undersøger forskellige former for AI-misbrug, herunder phishing, social engineering, malware-generering og prompt manipulation. Derudover gennemføres en dybere analyse af én valgt angrebstype.
 
-**Leverancer:**
-- Tokenizer
-- Datasæt-forberedelse
-- Lille Transformer-model
-- Træningsscript
-- Simpel REPL-chatbot
+**Projektmål:**
+- Undersøge hvordan generativ AI kan anvendes i cyberangreb.  
+- Identificere centrale trusselsvektorer relateret til AI.  
+- Analysere konkrete eksempler på AI-baseret misbrug.  
+- Udvikle en lille lokal AI-model som demonstrationsværktøj.  
+- Gennemføre en dybdegående analyse af én angrebstype.  
+- Diskutere mulige forsvarsstrategier.
+
+**Fokusområder:**
+- AI-genereret phishing  
+- Social engineering  
+- Malware-assistance  
+- Prompt injection  
+- Deepfake og identitetsmisbrug  
+- Automatiseret reconnaissance
+
+**Struktur for dybdegående analyse:**  
+1. Hvordan virker angrebet  
+2. Eksempel  
+3. Konsekvenser  
+4. Mulige modforanstaltninger
 
 ---
 
 ## 2. Metode
 
-Projektet gennemføres iterativt med fokus på små delmål.
-Hver komponent udvikles separat og integreres løbende.
+Projektet gennemføres som en kombination af analyse og praktisk demonstration. Der arbejdes med:
 
-Der arbejdes med:
-
-- Eksperimentel udvikling
-- Dokumentation undervejs
-- Løbende test og evaluering
+- Kortlægning af AI-misbrugsmetoder  
+- Teknisk analyse af én valgt angrebstype  
+- Demonstration via lokal AI-model (valgfrit)  
+- Løbende dokumentation og refleksion  
 
 ---
 
 ## 3. Milepæle og Tidsplan
 
-### **Uge 1–2 — Tokenizer**
-
-- Implementer en **Byte-Pair Encoding (BPE)** tokenizer fra bunden.
-- Trin:
-  - Indlæs datasæt.
-  - Tæl byte-par frekvenser.
-  - Sammenslå top-K par indtil ønsket ordforrådsstørrelse.
-  - Opret encode/decode funktioner.
-
-**Output:** `tokenizer.py`, `vocab.json`
-
----
-
-### **Uge 3–4 — Datasæt og Forbehandling**
-
-- Indsamling af tekstdata (~5–50 MB).
-- Rensning og normalisering af tekst.
-- Konverter tekst → tokens.
-- Opret træningssekvenser.
-
-**Output:** `dataset.py`, `train_data.npy`
-
----
-
-### **Uge 5–7 — Byg Lille Transformer**
-
-Implementer:
-
-- Token embeddings  
-- Positionelle encodings  
-- Multi-head self-attention  
-- Feed-forward lag  
-- LayerNorm  
-
-- Stack **2–6 lag**
-- Mål: **1M–10M parametre**
-
-**Output:** `model.py`
-
----
-
-### **Uge 8–10 — Træningsloop**
-
-- Forward pass  
-- Cross entropy loss  
-- Backpropagation (PyTorch eller manuelt)  
-- Gem checkpoints  
-- Simpel evaluering  
-
-**Output:** `train.py`, `model.pt`
-
----
-
-### **Uge 11 — Inferens Pipeline**
-
-Implementer tekstgenerering:
-
-- Sampling  
-- Top-k  
-- Temperature  
-
-**Output:** `generate.py`
-
----
-
-### **Uge 12 — Chat Interface**
-
-- Byg en simpel terminal-chatbot.
-- Integrér tokenizer + model + inferens.
-
-**Output:** `chat.py`
+| Uge    | Aktivitet                              | Output                           |
+|--------|---------------------------------------|---------------------------------|
+| 1–2    | Research: AI-misbrug og angrebstyper | Oversigt over trusler           |
+| 3–4    | Indsamling og analyse af eksempler   | Dokumentation af cases           |
+| 5–6    | Valg af dybdegående angreb           | Problemformulering + plan        |
+| 7–9    | Teknisk analyse og dokumentation     | Rapport, diagrammer, skitser     |
+| 10–11  | (Valgfrit) Demonstration via lokal AI | Enkel AI-model                  |
+| 12     | Konklusion og defensive strategier   | Endelig rapport, præsentation    |
 
 ---
 
 ## 4. Begrænsninger
 
-Projektet er begrænset af hardware, tid og modelstørrelse.
-Der fokuseres på læring og forståelse frem for maksimal performance.
+Projektet er begrænset af tid, ressourcer og adgang til data. Fokus er på **analyse og forståelse** af generativ AI som trusselsvektor frem for udvikling af avancerede AI-systemer.
 
---- 
+---
 
 ## 5. Ekstra Mål (Valgfrit)
 
-- Tilføj LoRA fine-tuning  
-- Tilføj GUI  
-- Tilføj hukommelsesbuffer  
-- Destillér modellen  
-- Tilføj emotionelle/stil-indstillinger  
+- Simulere forskellige angrebsscenarier  
+- Evaluere sikkerhedsforanstaltninger  
+- Skabe visualiseringer af AI-misbrug  
+- Reflektere over etiske aspekter  
 
 ---
 
-## 6. Forventet Læringsudbytte
+## 6. Overordnede Læringsmål
 
-- Forstå tokenisering på et dybt niveau  
-- Lære transformer-arkitektur  
-- Bygge et neuralt netværk fra bunden  
-- Forstå træningsdynamikker  
-- Implementere en minimal men reel sprogmodel  
+- Forstå hvordan generativ AI kan misbruges i cyberangreb.  
+- Analysere sikkerhedsrisici ved AI-systemer.  
+- Identificere angrebsmetoder relateret til generativ AI.  
+- Gennemføre en teknisk analyse af én angrebstype.  
+- Reflektere over defensive strategier.  
+- Dokumentere et IT-sikkerhedsprojekt struktureret.  
 
 ---
 
-## 7. Læringsmål
+## 7. Viden, Færdigheder og Kompetencer
 
-### AI & Machine Learning
-- Forklare hvordan tokenisering fungerer (BPE) og selv implementere en simpel tokenizer.
-- Redegøre for transformer-arkitekturens hoveddele (embeddings, attention, feed-forward, layer normalization).
-- Forklare hvordan en sprogmodel trænes (loss, backpropagation, epochs).
-- Implementere en lille transformer-model fra bunden.
-- Forklare forskellen mellem træning og inferens.
----
-### Programmering
-- Udvikle et større Python-projekt struktureret i moduler.
-- Arbejde med NumPy-arrays og tensors.
-- Bruge PyTorch til at bygge og træne neurale netværk.
-- Implementere egne træningsloops.
-- Arbejde med filformater (json, npy, pt).
----
-### IT-sikkerhed & ansvarlig AI
-- Reflektere over datasæt, bias og modelbegrænsninger.
-- Forstå sikkerhedsrisici ved lokale AI-modeller.
-- Diskutere etiske aspekter ved AI-chatbots.
-- Forklare hvordan simple AI-systemer kan misbruges eller manipuleres.
---- 
-### Projektarbejde 
-- Planlægge et teknisk projekt med milepæle
-- Dokumentere kode og proces løbende
-- Arbejde iterativt med fejlretning og forbedringer
-- Bruge GitHub til versionskontrol
+**Viden:**  
+- Sikkerhedsrisici ved AI  
+- Typer af angreb og misbrug  
+- Defensive strategier  
+
+**Færdigheder:**  
+- Analytisk vurdering af trusler  
+- Teknisk demonstration af AI (valgfrit)  
+- Rapportering og dokumentation  
+
+**Kompetencer:**  
+- Kritisk refleksion over AI i IT-sikkerhed  
+- Planlægning og gennemførelse af et sikkerhedsprojekt  
+- Kommunikere tekniske sikkerhedsaspekter til andre  
