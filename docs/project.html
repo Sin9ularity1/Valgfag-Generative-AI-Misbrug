@@ -17,36 +17,9 @@
 <li><a href="findings.html">Resultater</a></li>
 <li><a href="logbog.html">Logbog</a></li>
 <li><a href="about.html">Om</a></li>
-<li class="language-switcher">
-<select id="language-selector" onchange="changeLanguage(this.value)">
-<option value="da" selected>Dansk</option>
-<option value="en">English</option>
-</select>
-</li>
 </ul>
 </nav>
 </header>
-
-<div id="google_translate_element" style="display:none;"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'da', includedLanguages: 'en,da', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-
-function changeLanguage(lang) {
-    if (lang === 'da') {
-        // To revert to original language (Danish), remove the googtrans cookie
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=' + window.location.hostname;
-    } else {
-        // For other languages (English), set the googtrans cookie
-        document.cookie = `googtrans=/auto/${lang};path=/;domain=${window.location.hostname}`;
-    }
-    window.location.reload();
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <div class="container project-container">
 <aside class="sidebar project-sidebar">
 <h2>Projekt Sektioner</h2>
