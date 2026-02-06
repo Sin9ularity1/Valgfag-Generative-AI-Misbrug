@@ -27,7 +27,7 @@
 </nav>
 </header>
 
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="display:none;"></div>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -35,8 +35,13 @@ function googleTranslateElementInit() {
 }
 
 function changeLanguage(lang) {
-    var googtransCookie = `/auto/${lang}`;
-    document.cookie = `googtrans=${googtransCookie};path=/;domain=${window.location.hostname}`;
+    if (lang === 'da') {
+        // To revert to original language (Danish), remove the googtrans cookie
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=' + window.location.hostname;
+    } else {
+        // For other languages (English), set the googtrans cookie
+        document.cookie = `googtrans=/auto/${lang};path=/;domain=${window.location.hostname}`;
+    }
     window.location.reload();
 }
 </script>
