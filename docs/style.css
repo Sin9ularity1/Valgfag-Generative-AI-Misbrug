@@ -28,8 +28,9 @@
 }
 
 /* --- Global --- */
-body {
+html, body {
     margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-mono);
@@ -40,8 +41,10 @@ body {
 header {
     background-color: var(--ui-purple);
     padding: 1rem 2rem;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--border-color);
 }
@@ -83,21 +86,13 @@ nav {
     border-bottom: 3px solid var(--ui-green);
 }
 
-/* --- Layout Container --- */
-.container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    margin-left: 260px; /* space for fixed sidebar */
-    padding: 0 2rem 3rem;
-}
-
 /* --- Fixed Sidebar (UI Rail) --- */
 .sidebar {
     position: fixed;
-    top: 5.5rem; /* header height */
+    top: 4.6rem; /* EXACT header height */
     left: 0;
     width: 240px;
-    height: calc(100vh - 5.5rem);
+    height: calc(100vh - 4.6rem);
     background-color: var(--panel-bg);
     border-right: 2px solid var(--border-color);
     padding: 1.5rem;
@@ -105,8 +100,18 @@ nav {
     z-index: 900;
 }
 
+/* Remove visual seam under header */
+.sidebar::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--panel-bg);
+}
+
 .sidebar h2 {
-    font-family: var(--font-mono);
     font-size: 0.9rem;
     text-transform: uppercase;
     background-color: var(--ui-green);
@@ -125,7 +130,6 @@ nav {
     display: block;
     padding: 0.5rem 0.6rem;
     margin-bottom: 0.3rem;
-    font-family: var(--font-mono);
     color: var(--text-color);
     text-decoration: none;
     border-left: 6px solid transparent;
@@ -143,10 +147,19 @@ nav {
     font-weight: 600;
 }
 
+/* --- Main Layout --- */
+.container {
+    max-width: 1200px;
+    margin-left: 240px;
+    padding: 7rem 2.5rem 3rem;
+    background-color: var(--panel-bg);
+    min-height: 100vh;
+    border-left: 2px solid var(--border-color);
+}
+
 /* --- Main Content --- */
 main {
-    background-color: var(--panel-bg);
-    padding: 2.5rem;
+    padding: 0;
 }
 
 /* --- Headings (Highlighter Style) --- */
@@ -156,24 +169,17 @@ h1, h2, h3 {
     letter-spacing: 0.08em;
     display: inline-block;
     padding: 0.15rem 0.6rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
-h1 {
-    background-color: var(--highlight-purple);
-}
-
-h2 {
-    background-color: var(--highlight-green);
-}
-
-h3 {
-    background-color: #DDD;
-}
+h1 { background-color: var(--highlight-purple); }
+h2 { background-color: var(--highlight-green); }
+h3 { background-color: #DDD; }
 
 /* --- Paragraphs --- */
 p {
+    font-family: var(--font-main);
     margin-bottom: 1rem;
 }
 
@@ -188,13 +194,19 @@ code {
     font-family: var(--font-mono);
     background-color: #EDEDED;
     padding: 0.2rem 0.4rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #777;
 }
 
 /* --- Sections --- */
 section {
     margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #DDD;
     scroll-margin-top: 6rem;
+}
+
+section:last-child {
+    border-bottom: none;
 }
 
 /* --- Tables --- */
@@ -213,7 +225,7 @@ th {
 }
 
 th, td {
-    border: 2px solid var(--border-color);
+    border: 1.5px solid var(--border-color);
     padding: 0.6rem;
 }
 
@@ -224,9 +236,8 @@ tbody tr:nth-child(even) {
 /* --- Footer --- */
 footer {
     margin-top: 3rem;
-    padding: 2rem;
+    padding: 2rem 0 0;
     text-align: center;
-    font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--muted-text);
 }
