@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '-50px 0px -25% 0px'
+        threshold: 0,
+        rootMargin: '-40% 0px -60% 0px'
     });
 
     sections.forEach(section => {
