@@ -104,8 +104,7 @@ nav {
     border: 2px solid var(--border-color);
     padding: 1.5rem;
     position: sticky;
-    top: 0;
-    align-self: flex-start;
+    top: 6rem;
 }
 
 .sidebar h2 {
@@ -189,6 +188,7 @@ code {
 /* --- Sections --- */
 section {
     margin-bottom: 2.5rem;
+    scroll-margin-top: 6rem;
 }
 
 /* --- Tables --- */
