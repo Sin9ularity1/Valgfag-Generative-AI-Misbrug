@@ -91,8 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Call the sidebar generation function if a sidebar exists
+    // Call the sidebar generation function if a sidebar exists AND it's a lab-related page
     if (document.querySelector('.sidebar')) {
-        generateLabSidebar();
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('labs.html') || currentPath.includes('/labs/')) {
+            generateLabSidebar();
+        }
     }
 });
