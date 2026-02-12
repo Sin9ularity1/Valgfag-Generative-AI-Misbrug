@@ -29,17 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const labs = [
         { title: "Labs Home", path: "labs.html" },
-        { title: "AI Phishing Lab", path: "labs/ai_phishing.html" },
-        { title: "Prompt Injection Lab", path: "labs/prompt_injection.html" },
-        { title: "Sensitive Information Disclosure Lab", path: "labs/sensitive_information_disclosure.html" },
-        { title: "Supply Chain Vulnerabilities Lab", path: "labs/supply_chain.html" },
-        { title: "Data and Model Poisoning Lab", path: "labs/data_and_model_poisoning.html" },
-        { title: "Improper Output Handling Lab", path: "labs/improper_output_handling.html" },
-        { title: "Excessive Agency Lab", path: "labs/excessive_agency.html" },
-        { title: "System Prompt Leakage Lab", path: "labs/system_prompt_leakage.html" },
-        { title: "Vector and Embedding Weaknesses Lab", path: "labs/vector_and_embedding_weaknesses.html" },
-        { title: "Misinformation Lab", path: "labs/misinformation.html" },
-        { title: "Unbounded Consumption Lab", path: "labs/unbounded_consumption.html" },
+        { title: "Prompt Injection", path: "labs/prompt_injection.html" },
+        { title: "Sensitive Information Disclosure", path: "labs/sensitive_information_disclosure.html" },
+        { title: "Supply Chain Vulnerabilities", path: "labs/supply_chain.html" },
+        { title: "Data and Model Poisoning", path: "labs/data_and_model_poisoning.html" },
+        { title: "Improper Output Handling", path: "labs/improper_output_handling.html" },
+        { title: "Excessive Agency", path: "labs/excessive_agency.html" },
+        { title: "System Prompt Leakage", path: "labs/system_prompt_leakage.html" },
+        { title: "Vector and Embedding Weaknesses", path: "labs/vector_and_embedding_weaknesses.html" },
+        { title: "Misinformation", path: "labs/misinformation.html" },
+        { title: "Unbounded Consumption", path: "labs/unbounded_consumption.html" },
     ];
 
     function generateLabSidebar() {
