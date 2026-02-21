@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const researchTopics = [
         { title: "Research Home", path: "research.html" },
-        { title: "Prompt Injection", path: "research/prompt_injection.html" },
-        { title: "Sensitive Information Disclosure", path: "research/sensitive_information_disclosure.html" },
-        { title: "Supply Chain Vulnerabilities", path: "research/supply_chain.html" },
-        { title: "Data and Model Poisoning", path: "research/data_and_model_poisoning.html" },
-        { title: "Improper Output Handling", path: "research/improper_output_handling.html" },
-        { title: "Excessive Agency", path: "research/excessive_agency.html" },
-        { title: "System Prompt Leakage", path: "research/system_prompt_leakage.html" },
-        { title: "Vector and Embedding Weaknesses", path: "research/vector_and_embedding_weaknesses.html" },
-        { title: "Misinformation", path: "research/misinformation.html" },
-        { title: "Unbounded Consumption", path: "research/unbounded_consumption.html" },
+        { title: "LLM01: Prompt Injection", path: "research/prompt_injection.html" },
+        { title: "LLM02: Sensitive Information Disclosure", path: "research/sensitive_information_disclosure.html" },
+        { title: "LLM03: Supply Chain", path: "research/supply_chain.html" },
+        { title: "LLM04: Data and Model Poisoning", path: "research/data_and_model_poisoning.html" },
+        { title: "LLM05: Improper Output Handling", path: "research/improper_output_handling.html" },
+        { title: "LLM06: Excessive Agency", path: "research/excessive_agency.html" },
+        { title: "LLM07: System Prompt Leakage", path: "research/system_prompt_leakage.html" },
+        { title: "LLM08: Vector and Embedding Weaknesses", path: "research/vector_and_embedding_weaknesses.html" },
+        { title: "LLM09: Misinformation", path: "research/misinformation.html" },
+        { title: "LLM10: Unbounded Consumption", path: "research/unbounded_consumption.html" },
     ];
 
     function generateResearchSidebar() {
