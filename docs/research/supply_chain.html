@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM03: Supply Chain</title>
+    <title>LLM03: Supply Chain Vulnerabilities</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -32,40 +32,90 @@
         <ul>
         </ul>
     </aside>
-
+        
     <main class="content">
         <section>
-            <h1>LLM03: Supply Chain</h1>
-            <h2>Purpose</h2>
-            <p>Purpose of the Supply Chain Vulnerabilities Research.</p>
+            <h1>LLM03: Supply Chain Vulnerabilities</h1>
 
-            <h2>Setup</h2>
-            <ul>
-                <li>Model used: [Specify Model]</li>
-                <li>Environment: [Specify Environment]</li>
-                <li>Tools: [Specify Tools]</li>
-            </ul>
+            <section>
+                <h2>1. What is Supply Chain Vulnerability</h2>
 
-            <h2>Attack Techniques</h2>
-            <p>List attack techniques for Supply Chain Vulnerabilities.</p>
+                <p>
+                    LLM Supply Chain Vulnerability refers to risks affecting the integrity of training data, pre-trained models, and deployment platforms<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP LLM03]</a></sup>. 
+                    The supply chain for LLMs is complex and includes data scrapers, model providers, third-party libraries, and cloud infrastructure.
+                </p>
 
-            <h2>Results</h2>
-            <p>Screenshots and observations of results for Supply Chain Vulnerabilities.</p>
+                <p>
+                    Vulnerabilities at any point in this chain can lead to biased outputs, security breaches, system failures, or the introduction of hidden backdoors into the model<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP LLM03]</a></sup>.
+                </p>
 
-            <h2>Analysis</h2>
-            <p>Explain why the attacks were effective or not for Supply Chain Vulnerabilities.</p>
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Compromise of model integrity and reliability<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Introduction of malicious backdoors or biases<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Legal and licensing risks from untrusted data/models<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Information disclosure or unauthorized system access<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup></li>
+                </ul>
+            </section>
 
-            <h2>Countermeasures</h2>
-            <p>Strategies to detect and prevent Supply Chain Vulnerabilities.</p>
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
 
-            <h2>Reflection</h2>
-            <p>What was learned about Supply Chain Vulnerabilities.</p>
+                <article>
+                    <h3>2.1 Vulnerable Third-Party Packages</h3>
+                    <p>Usage of outdated or compromised Python libraries (e.g., NumPy, PyTorch) during model development or deployment<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+
+                <article>
+                    <h3>2.2 Pre-trained Model Tampering</h3>
+                    <p>Using models from untrusted sources that may contain hidden biases, backdoors, or have been fine-tuned to remove safety features<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+
+                <article>
+                    <h3>2.3 Data Poisoning in the Supply Chain</h3>
+                    <p>Attackers compromising data sources used for training or fine-tuning, leading to manipulated model behavior<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    According to OWASP, securing the LLM supply chain requires a proactive and multi-layered approach<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP LLM03]</a></sup>.
+                </p>
+
+                <ul>
+                    <li><strong>3.1 Vetting Sources:</strong> Rigorously vet all third-party data and pre-trained model sources. Only use reputable repositories.</li>
+                    <li><strong>3.2 SBOM (Software Bill of Materials):</strong> Maintain an up-to-date SBOM to track all components, versions, and dependencies.</li>
+                    <li><strong>3.3 Integrity Checks:</strong> Use cryptographic hashes and signatures to verify the integrity of models and datasets before use.</li>
+                    <li><strong>3.4 Red Teaming:</strong> Conduct comprehensive AI Red Teaming to identify vulnerabilities and potential backdoors in integrated components.</li>
+                    <li><strong>3.5 Least Privilege:</strong> Limit the permissions of models and tools within the environment to contain potential breaches.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Malicious Library Injection</dt>
+                    <dd>An attacker compromises a popular ML library, injecting code that exfiltrates API keys during model training<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #2: Backdoored Pre-trained Model</dt>
+                    <dd>A developer downloads a "fine-tuned" model from a public hub that contains a hidden trigger to bypass security checks<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #3: Poisoned Training Data</dt>
+                    <dd>An attacker poisons a public dataset used for model alignment, causing the model to provide harmful instructions when specifically prompted<sup><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/" target="_blank">[OWASP]</a></sup>.</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm032025-supply-chain/">OWASP LLM03: Supply Chain Vulnerabilities</a></li>
+                </ul>
+            </section>
         </section>
     </main>
 </div>
 
 <footer>
-
 </footer>
 
 <script src="../script.js"></script>
