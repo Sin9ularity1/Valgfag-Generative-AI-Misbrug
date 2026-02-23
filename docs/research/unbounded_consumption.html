@@ -32,40 +32,88 @@
         <ul>
         </ul>
     </aside>
-
+        
     <main class="content">
         <section>
             <h1>LLM10: Unbounded Consumption</h1>
-            <h2>Purpose</h2>
-            <p>Purpose of the Unbounded Consumption Research.</p>
 
-            <h2>Setup</h2>
-            <ul>
-                <li>Model used: [Specify Model]</li>
-                <li>Environment: [Specify Environment]</li>
-                <li>Tools: [Specify Tools]</li>
-            </ul>
+            <section>
+                <h2>1. What is Unbounded Consumption</h2>
 
-            <h2>Attack Techniques</h2>
-            <p>List attack techniques for Unbounded Consumption.</p>
+                <p>
+                    Unbounded Consumption occurs when an LLM application allows users to conduct excessive inferences, leading to Denial of Service (DoS), economic losses (Denial of Wallet), or model theft.<sup><a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Results</h2>
-            <p>Screenshots and observations of results for Unbounded Consumption.</p>
+                <p>
+                    The high computational cost of LLM inference makes them a prime target for resource exhaustion attacks.<sup><a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Analysis</h2>
-            <p>Explain why the attacks were effective or not for Unbounded Consumption.</p>
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Compromise of system integrity and availability</li>
+                    <li>Unauthorized data access or disclosure</li>
+                    <li>Financial and reputational damage</li>
+                    <li>Safety risks in critical applications</li>
+                </ul>
+            </section>
 
-            <h2>Countermeasures</h2>
-            <p>Strategies to detect and prevent Unbounded Consumption.</p>
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
+                <article>
+                    <h3>2.1 Variable-Length Input Flood</h3>
+                    <p>Attackers overload the system with numerous large inputs to deplete CPU and memory resources.</p>
+                </article>
+                <article>
+                    <h3>2.2 Denial of Wallet (DoW)</h3>
+                    <p>Exploiting pay-per-use models by generating massive volumes of requests to cause unsustainable financial costs.</p>
+                </article>
+                <article>
+                    <h3>2.3 Model Extraction</h3>
+                    <p>Querying the API systematically to replicate the model behavior or weights, essentially stealing intellectual property.</p>
+                </article>
 
-            <h2>Reflection</h2>
-            <p>What was learned about Unbounded Consumption.</p>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    According to OWASP guidance, risk can be significantly reduced through the following strategies<sup><a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/" target="_blank">[OWASP]</a></sup>:
+                </p>
+
+                <ul>
+                    <li>3.1 Rate Limiting & Quotas: Implement strict limits on the number of requests and tokens a single user can consume.</li>
+                    <li>3.2 Input Size Constraints: Enforce maximum lengths for prompts and context windows to prevent memory exhaustion.</li>
+                    <li>3.3 Resource Monitoring: Continuously monitor computational usage and detect anomaly patterns in consumption.</li>
+                    <li>3.4 Cost Management: Set hard budget caps for cloud-based AI services to prevent Denial of Wallet scenarios.</li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Resource Exhaustion DoS</dt>
+                    <dd>An attacker sends a flood of complex, max-length prompts that crash the inference server for all users.</dd>
+                    <dt>Scenario #2: Budget Depletion</dt>
+                    <dd>A botnet generates millions of small queries, exhausting the monthly API budget for a startup in a matter of hours.</dd>
+                    <dt>Scenario #3: Shadow Model Replication</dt>
+                    <dd>An attacker uses a functional replication attack to build a private clone of a proprietary model using its own API responses.</dd>
+
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/">LLM10: Unbounded Consumption</a></li>
+                </ul>
+            </section>
         </section>
     </main>
 </div>
 
 <footer>
-
 </footer>
 
 <script src="../script.js"></script>

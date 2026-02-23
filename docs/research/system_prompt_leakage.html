@@ -32,40 +32,88 @@
         <ul>
         </ul>
     </aside>
-
+        
     <main class="content">
         <section>
             <h1>LLM07: System Prompt Leakage</h1>
-            <h2>Purpose</h2>
-            <p>Purpose of the System Prompt Leakage Research.</p>
 
-            <h2>Setup</h2>
-            <ul>
-                <li>Model used: [Specify Model]</li>
-                <li>Environment: [Specify Environment]</li>
-                <li>Tools: [Specify Tools]</li>
-            </ul>
+            <section>
+                <h2>1. What is System Prompt Leakage</h2>
 
-            <h2>Attack Techniques</h2>
-            <p>List attack techniques for System Prompt Leakage.</p>
+                <p>
+                    System Prompt Leakage is the risk that internal instructions used to steer an LLM behavior may contain sensitive information not intended for users. While the prompt itself is a set of instructions, its disclosure can facilitate other attacks if it contains credentials or internal rules.<sup><a href="https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Results</h2>
-            <p>Screenshots and observations of results for System Prompt Leakage.</p>
+                <p>
+                    Disclosure reveals the model internal guardrails, which can then be systematically bypassed by attackers.<sup><a href="https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Analysis</h2>
-            <p>Explain why the attacks were effective or not for System Prompt Leakage.</p>
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Compromise of system integrity and availability</li>
+                    <li>Unauthorized data access or disclosure</li>
+                    <li>Financial and reputational damage</li>
+                    <li>Safety risks in critical applications</li>
+                </ul>
+            </section>
 
-            <h2>Countermeasures</h2>
-            <p>Strategies to detect and prevent System Prompt Leakage.</p>
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
+                <article>
+                    <h3>2.1 Exposure of Sensitive Credentials</h3>
+                    <p>System prompts that inadvertently include API keys, database connection strings, or internal IDs.</p>
+                </article>
+                <article>
+                    <h3>2.2 Revealing Internal Logic</h3>
+                    <p>Prompts disclosing internal decision-making processes, such as loan approval limits or transaction thresholds.</p>
+                </article>
+                <article>
+                    <h3>2.3 Exposure of Filtering Criteria</h3>
+                    <p>Revealing the exact keywords or rules the model uses to reject harmful content, allowing attackers to craft bypasses.</p>
+                </article>
 
-            <h2>Reflection</h2>
-            <p>What was learned about System Prompt Leakage.</p>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    According to OWASP guidance, risk can be significantly reduced through the following strategies<sup><a href="https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/" target="_blank">[OWASP]</a></sup>:
+                </p>
+
+                <ul>
+                    <li>3.1 Credential Externalization: Never embed API keys or secrets directly in system prompts. Use environment variables or secret managers.</li>
+                    <li>3.2 Output Guardrails: Implement external filters to inspect model output for sensitive system information before it reaches the user.</li>
+                    <li>3.3 Least Privilege Agents: Use multiple specialized agents with restricted system prompts rather than one large prompt with all permissions.</li>
+                    <li>3.4 Avoid Over-Reliance: Do not rely solely on system prompts for security; enforce critical controls independently of the LLM.</li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Credential Extraction</dt>
+                    <dd>An attacker uses a jailbreak prompt to force the model to reveal its system instructions, which include an embedded legacy API key.</dd>
+                    <dt>Scenario #2: Guardrail Bypass</dt>
+                    <dd>By extracting the system prompt, an attacker learns the specific phrases that trigger the "refusal" response and crafts an injection that avoids them.</dd>
+                    <dt>Scenario #3: Rule Manipulation</dt>
+                    <dd>An attacker discovers internal banking rules from a chatbot prompt and uses that knowledge to manipulate a transaction request.</dd>
+
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/">LLM07: System Prompt Leakage</a></li>
+                </ul>
+            </section>
         </section>
     </main>
 </div>
 
 <footer>
-
 </footer>
 
 <script src="../script.js"></script>

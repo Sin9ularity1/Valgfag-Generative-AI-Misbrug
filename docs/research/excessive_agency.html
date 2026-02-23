@@ -32,40 +32,88 @@
         <ul>
         </ul>
     </aside>
-
+        
     <main class="content">
         <section>
             <h1>LLM06: Excessive Agency</h1>
-            <h2>Purpose</h2>
-            <p>Purpose of the Excessive Agency Research.</p>
 
-            <h2>Setup</h2>
-            <ul>
-                <li>Model used: [Specify Model]</li>
-                <li>Environment: [Specify Environment]</li>
-                <li>Tools: [Specify Tools]</li>
-            </ul>
+            <section>
+                <h2>1. What is Excessive Agency</h2>
 
-            <h2>Attack Techniques</h2>
-            <p>List attack techniques for Excessive Agency.</p>
+                <p>
+                    Excessive Agency occurs when an LLM-based system, granted the ability to call functions or interface with other systems, performs damaging actions due to unexpected or manipulated outputs. The root causes are typically excessive functionality, permissions, or autonomy.<sup><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Results</h2>
-            <p>Screenshots and observations of results for Excessive Agency.</p>
+                <p>
+                    This vulnerability is particularly dangerous in autonomous agents where the model can "decide" to call tools without direct human supervision.<sup><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank">[OWASP]</a></sup>.
+                </p>
 
-            <h2>Analysis</h2>
-            <p>Explain why the attacks were effective or not for Excessive Agency.</p>
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Compromise of system integrity and availability</li>
+                    <li>Unauthorized data access or disclosure</li>
+                    <li>Financial and reputational damage</li>
+                    <li>Safety risks in critical applications</li>
+                </ul>
+            </section>
 
-            <h2>Countermeasures</h2>
-            <p>Strategies to detect and prevent Excessive Agency.</p>
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
+                <article>
+                    <h3>2.1 Excessive Functionality</h3>
+                    <p>An LLM agent has access to a "Delete" function when it only needs "Read" access for its intended task.</p>
+                </article>
+                <article>
+                    <h3>2.2 Excessive Permissions</h3>
+                    <p>An LLM extension accesses downstream systems with a high-privileged service account instead of the individual user context.</p>
+                </article>
+                <article>
+                    <h3>2.3 Excessive Autonomy</h3>
+                    <p>An application fails to require human approval for high-impact actions like deleting files or making financial transactions.</p>
+                </article>
 
-            <h2>Reflection</h2>
-            <p>What was learned about Excessive Agency.</p>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    According to OWASP guidance, risk can be significantly reduced through the following strategies<sup><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank">[OWASP]</a></sup>:
+                </p>
+
+                <ul>
+                    <li>3.1 Principle of Least Privilege: Limit the functions and permissions of LLM extensions to the absolute minimum required.</li>
+                    <li>3.2 Human-in-the-Loop: Require manual approval for all high-impact or irreversible actions.</li>
+                    <li>3.3 Granular Functionality: Prefer specific, narrow functions (e.g., "Write to Log") over open-ended ones (e.g., "Run Shell Command").</li>
+                    <li>3.4 Complete Mediation: Implement authorization in downstream systems rather than relying on the LLM to police itself.</li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Mailbox Exfiltration</dt>
+                    <dd>A personal assistant app with mailbox access is tricked via indirect prompt injection to scan the inbox and forward secrets to an attacker.</dd>
+                    <dt>Scenario #2: Unauthorized System Deletion</dt>
+                    <dd>An autonomous agent with file-writing capabilities is manipulated into deleting critical system configuration files.</dd>
+                    <dt>Scenario #3: Financial Mis-transaction</dt>
+                    <dd>An AI-driven trading bot executes an unauthorized high-risk trade due to ambiguous instructions from a manipulated source.</dd>
+
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">LLM06: Excessive Agency</a></li>
+                </ul>
+            </section>
         </section>
     </main>
 </div>
 
 <footer>
-
 </footer>
 
 <script src="../script.js"></script>
