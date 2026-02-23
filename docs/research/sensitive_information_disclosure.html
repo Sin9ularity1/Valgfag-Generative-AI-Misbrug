@@ -1,118 +1,159 @@
-<section>
-    <h1>LLM02: Sensitive Information Disclosure</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM02: Sensitive Information Disclosure</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
-    <section>
-        <h2>1. What is Sensitive Information Disclosure</h2>
-
-        <p>
-            Sensitive information disclosure occurs when a Large Language Model (LLM) exposes personal, financial, health, business, or proprietary data<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP LLM02]</a></sup>. 
-            This can include training data, confidential algorithms, security credentials, or legal documents.
-        </p>
-
-        <p>
-            Such disclosures can result in privacy violations, unauthorized access, or intellectual property breaches<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP LLM02]</a></sup>. 
-            Users must be aware of the risks of submitting sensitive data to LLMs.
-        </p>
-
-        <p><strong>Potential impacts include:</strong></p>
-        <ul>
-            <li>Exposure of personal identifiable information (PII)<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
-            <li>Leakage of proprietary algorithms or model configurations<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
-            <li>Confidential business information disclosure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
-            <li>Security credentials or secrets leakage<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
+<header>
+    <nav>
+        <div class="logo">GenAI Misuse in IT Security</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../project.html">Project</a></li>
+            <li><a href="../research.html" class="active">Research</a></li>
+            <li><a href="../findings.html">Findings</a></li>
+            <li><a href="../logbog.html">Logbook</a></li>
+            <li><a href="../about.html">About</a></li>
         </ul>
-    </section>
+    </nav>
+</header>
 
-    <section>
-        <h2>2. Common Examples of Vulnerability</h2>
-
-        <article>
-            <h3>2.1 PII Leakage</h3>
-            <p>Personal identifiable information may be disclosed during interactions with the LLM<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</p>
-        </article>
-
-        <article>
-            <h3>2.2 Proprietary Algorithm Exposure</h3>
-            <p>Poorly configured outputs can reveal proprietary algorithms or data<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>. For example, training data may be exposed to inversion attacks that reconstruct sensitive inputs.</p>
-        </article>
-
-        <article>
-            <h3>2.3 Sensitive Business Data Disclosure</h3>
-            <p>Generated responses might inadvertently include confidential business information<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</p>
-        </article>
-    </section>
-
-    <section>
-        <h2>3. Prevention and Mitigation</h2>
-
-        <p>
-            Organizations should implement multiple layers of safeguards to minimize the risk of sensitive information disclosure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.
-        </p>
-
+<div class="page">
+    <aside class="sidebar">
+        <h2>Available Research</h2>
         <ul>
-            <li>
-                <strong>3.1 Data Sanitization:</strong>
-                <ul>
-                    <li>Scrub or mask sensitive content before training or processing. Prevent user data from entering the model<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.2 Robust Input Validation:</strong>
-                <ul>
-                    <li>Detect and filter out sensitive or harmful inputs to prevent exposure through outputs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.3 Access Controls:</strong>
-                <ul>
-                    <li>Enforce least privilege access to sensitive data and restrict data sources<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.4 Federated Learning & Privacy Techniques:</strong>
-                <ul>
-                    <li>Use decentralized training and differential privacy to reduce risk of data exposure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.5 User Education & Transparency:</strong>
-                <ul>
-                    <li>Guide users on safe LLM usage and maintain clear policies on data usage, retention, and opt-outs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.6 Secure System Configuration:</strong>
-                <ul>
-                    <li>Limit user access to system prompts and follow security misconfiguration best practices<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>3.7 Advanced Techniques:</strong>
-                <ul>
-                    <li>Implement homomorphic encryption, tokenization, and redaction to keep data confidential during processing<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
-                </ul>
-            </li>
         </ul>
-    </section>
+    </aside>
+        
+    <main class="content">
+        <section>
+            <h1>LLM02: Sensitive Information Disclosure</h1>
 
-    <section>
-        <h2>4. Example Attack Scenarios</h2>
-        <dl>
-            <dt>Scenario #1: Unintentional Data Exposure</dt>
-            <dd>A user receives another user's PII due to insufficient data sanitization<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
-            <dt>Scenario #2: Targeted Prompt Injection</dt>
-            <dd>An attacker bypasses input filters to extract sensitive information<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
-            <dt>Scenario #3: Data Leak via Training Data</dt>
-            <dd>Negligent inclusion of sensitive data in training leads to exposure in model outputs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
-        </dl>
-    </section>
+            <section>
+                <h2>1. What is Sensitive Information Disclosure</h2>
 
-    <section>
-        <h2>5. References</h2>
-        <ul>
-            <li><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/">OWASP LLM02 Sensitive Information Disclosure</a></li>
-            <li><a href="https://www.foxbusiness.com/">AI data leak crisis prevention</a></li>
-            <li><a href="https://www.wired.com/">ChatGPT sensitive data examples</a></li>
-        </ul>
-    </section>
-</section>
+                <p>
+                    Sensitive information disclosure occurs when a Large Language Model (LLM) exposes personal, financial, health, business, or proprietary data<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP LLM02]</a></sup>. 
+                    This can include training data, confidential algorithms, security credentials, or legal documents.
+                </p>
+
+                <p>
+                    Such disclosures can result in privacy violations, unauthorized access, or intellectual property breaches<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP LLM02]</a></sup>. 
+                    Users must be aware of the risks of submitting sensitive data to LLMs.
+                </p>
+
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Exposure of personal identifiable information (PII)<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Leakage of proprietary algorithms or model configurations<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Confidential business information disclosure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Security credentials or secrets leakage<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
+
+                <article>
+                    <h3>2.1 PII Leakage</h3>
+                    <p>Personal identifiable information may be disclosed during interactions with the LLM<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+
+                <article>
+                    <h3>2.2 Proprietary Algorithm Exposure</h3>
+                    <p>Poorly configured outputs can reveal proprietary algorithms or data<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>. For example, training data may be exposed to inversion attacks that reconstruct sensitive inputs.</p>
+                </article>
+
+                <article>
+                    <h3>2.3 Sensitive Business Data Disclosure</h3>
+                    <p>Generated responses might inadvertently include confidential business information<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    Organizations should implement multiple layers of safeguards to minimize the risk of sensitive information disclosure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>3.1 Data Sanitization:</strong>
+                        <ul>
+                            <li>Scrub or mask sensitive content before training or processing. Prevent user data from entering the model<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.2 Robust Input Validation:</strong>
+                        <ul>
+                            <li>Detect and filter out sensitive or harmful inputs to prevent exposure through outputs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.3 Access Controls:</strong>
+                        <ul>
+                            <li>Enforce least privilege access to sensitive data and restrict data sources<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.4 Federated Learning & Privacy Techniques:</strong>
+                        <ul>
+                            <li>Use decentralized training and differential privacy to reduce risk of data exposure<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.5 User Education & Transparency:</strong>
+                        <ul>
+                            <li>Guide users on safe LLM usage and maintain clear policies on data usage, retention, and opt-outs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.6 Secure System Configuration:</strong>
+                        <ul>
+                            <li>Limit user access to system prompts and follow security misconfiguration best practices<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3.7 Advanced Techniques:</strong>
+                        <ul>
+                            <li>Implement homomorphic encryption, tokenization, and redaction to keep data confidential during processing<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Unintentional Data Exposure</dt>
+                    <dd>A user receives another user's PII due to insufficient data sanitization<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #2: Targeted Prompt Injection</dt>
+                    <dd>An attacker bypasses input filters to extract sensitive information<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #3: Data Leak via Training Data</dt>
+                    <dd>Negligent inclusion of sensitive data in training leads to exposure in model outputs<sup><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" target="_blank">[OWASP]</a></sup>.</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/">OWASP LLM02 Sensitive Information Disclosure</a></li>
+                    <li><a href="https://www.foxbusiness.com/">AI data leak crisis prevention</a></li>
+                    <li><a href="https://www.wired.com/">ChatGPT sensitive data examples</a></li>
+                </ul>
+            </section>
+        </section>
+    </main>
+</div>
+
+<footer>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
