@@ -5,7 +5,7 @@ import re
 SIDEBAR_PROFILE = """        <div class="sidebar-profile">
             <div class="profile-img">RB</div>
             <div class="profile-name">Reuben Badham</div>
-            <div class="profile-bio">IT Security Student @ Odense, Denmark. Specializing in GenAI Security & LLM Vulnerabilities.</div>
+            <div class="profile-bio">IT Security Student at UCL Odense</div>
             <ul class="profile-links">
                 <li>📍 Odense, Denmark</li>
                 <li>🔗 <a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
@@ -29,7 +29,7 @@ RESEARCH_TOPICS = [
 ]
 
 def get_research_sidebar(rel_path_to_research):
-    html = '        <h2 style="margin-top: 2rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-text);">Research Topics</h2>\n        <ul>\n'
+    html = "        <ul>\n"
     for name, link in RESEARCH_TOPICS:
         html += f'            <li><a href="{rel_path_to_research}{link}">{name}</a></li>\n'
     html += "        </ul>"

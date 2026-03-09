@@ -104,26 +104,27 @@ nav {
   border-radius: 12px;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  text-align: left; /* Ensure left alignment */
 }
 
 .sidebar-profile {
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left; /* Align profile text to left */
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 60px; /* Slightly smaller for left alignment */
+  height: 60px;
   background-color: var(--accent-color);
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
+  border-radius: 12px; /* Squared-off look */
+  margin: 0 0 1.5rem 0; /* Remove auto margins */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: white;
   font-weight: 700;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .profile-name {
