@@ -8,7 +8,6 @@ The goal is to identify central vulnerabilities in modern GenAI systems and eval
 
 - **[Live Website](https://sin9ularity1.github.io/Valgfag-Generative-AI-Misbrug/index.html)** - The main research, findings, and analysis (Graded).
 - **[Project Logbook](APPENDIX_Logbook.md)** - Ongoing activities and weekly reflections (Appendix).
-- **[Problem Statement](APPENDIX_Problem_Statement.md)** - Detailed project goals and measurable objectives (Appendix).
 
 ## How to navigate
 - The **`docs/`** directory contains the source code for the project website.
