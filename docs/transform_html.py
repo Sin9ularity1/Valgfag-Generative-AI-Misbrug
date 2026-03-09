@@ -9,14 +9,14 @@ SIDEBAR_PROFILE = """        <div class="sidebar-profile">
             <ul class="profile-links">
                 <li>📍 Odense, Denmark</li>
                 <li>🔗 <a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
-                <li>💻 <a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">GitHub</a></li>
             </ul>
-        </div>"""
-
-FOOTER = "<footer>&copy; 2026 Reuben Badham. GenAI Security Research Project.</footer>"
+        </div>
+        <h2 style="margin-top: 2rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-text);">Technical Appendix</h2>
+        <ul>
+            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">📄 Project Appendix (GitLab)</a></li>
+        </ul>"""
 
 RESEARCH_TOPICS = [
-
     ("LLM01: Prompt Injection", "prompt_injection.html"),
     ("LLM02: Sensitive Info Disclosure", "sensitive_information_disclosure.html"),
     ("LLM03: Supply Chain Risks", "supply_chain.html"),
@@ -45,10 +45,19 @@ def transform_file(file_path):
     rel_root = '../' if is_research_subdir else ''
     rel_research = '' if is_research_subdir else 'research/'
 
-    # 1. Update Header Logo
+    # 1. Update Header Logo and Navigation
     content = re.sub(r'<(a|div)[^>]*class="logo"[^>]*>.*?</\1>', 
                      f'<a href="{rel_root}index.html" class="logo">GenAI Security</a>', 
                      content)
+    
+    # Global Navigation Update (Pruning About and Logbook)
+    nav_html = f"""        <ul class="nav-links">
+            <li><a href="{rel_root}index.html">Home</a></li>
+            <li><a href="{rel_root}project.html">Project</a></li>
+            <li><a href="{rel_root}research.html">Research</a></li>
+            <li><a href="{rel_root}findings.html">Findings</a></li>
+        </ul>"""
+    content = re.sub(r'<ul class="nav-links">.*?</ul>', nav_html, content, flags=re.DOTALL)
 
     # 2. Update Favicon and Manifest Paths (Ensure no leading slash)
     content = re.sub(r'href="/favicon', f'href="{rel_root}favicon', content)
@@ -63,7 +72,7 @@ def transform_file(file_path):
     if sidebar_match:
         old_sidebar_inner = sidebar_match.group(1)
         
-        # Keep existing navigation if it exists
+        # Keep existing navigation if it exists (for internal page links like Problem Statement)
         nav_match = re.search(r'<h2>Navigation</h2>\s*<ul>.*?</ul>', old_sidebar_inner, re.DOTALL)
         navigation_html = nav_match.group(0) if nav_match else ""
         
@@ -82,7 +91,7 @@ def transform_file(file_path):
 
     # 5. Correct Navigation Paths for research subdir
     if is_research_subdir:
-        links = ["index.html", "project.html", "research.html", "findings.html", "logbog.html", "about.html", "style.css", "script.js"]
+        links = ["index.html", "project.html", "research.html", "findings.html", "style.css", "script.js"]
         for link in links:
             content = content.replace(f'href="{link}"', f'href="../{link}"')
             content = content.replace(f'src="{link}"', f'src="../{link}"')
@@ -95,8 +104,7 @@ def transform_file(file_path):
 
 root_dir = "/home/sin9ularity/Documents/Selvvalgt_fordybelse/Valgfag/docs"
 files_to_process = [
-    "index.html", "about.html", "findings.html", "logbog.html", 
-    "project.html", "references.html", "research.html"
+    "index.html", "findings.html", "project.html", "research.html"
 ]
 
 for f in files_to_process:
