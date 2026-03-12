@@ -16,10 +16,9 @@ function renderSidebar() {
         <div class="sidebar-profile">
             <div class="profile-img">RB</div>
             <div class="profile-name">Reuben Badham</div>
-            <div class="profile-bio">IT Security Student at UCL Odense</div>
+            <div class="profile-bio">IT Security Student at UCL Odense <br>Valgfag: GenAI Misuse.</div>
             <ul class="profile-links">
-                <li>📍 Odense, Denmark</li>
-                <li>🔗 <a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
             </ul>
         </div>`;
 
