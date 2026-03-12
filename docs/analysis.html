@@ -97,6 +97,74 @@
             </div>
         </section>
 
+        <section id="weakness-catalog">
+            <h2>3.1 Granular Technical Weakness Catalog</h2>
+            <p>Moving from conceptual vulnerabilities to specific technical failures, the following catalog identifies the precise mechanisms used in modern GenAI exploits.</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                        <th style="padding: 1rem;">Weakness</th>
+                        <th style="padding: 1rem;">Technical Mechanism</th>
+                        <th style="padding: 1rem;">Security Failure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;"><strong>Token Smuggling</strong></td>
+                        <td style="padding: 1rem;">Using rare Unicode characters or Base64/Rot13 encoding within a prompt.</td>
+                        <td style="padding: 1rem;"><strong>Filter Bypass:</strong> Security layers inspect <em>words</em>, but the LLM processes <em>tokens</em>, allowing hidden instructions to slip through.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;"><strong>Adversarial Suffixes</strong></td>
+                        <td style="padding: 1rem;">Appending optimized strings (e.g., "GCG" attacks) that mathematically force a "Yes" response.</td>
+                        <td style="padding: 1rem;"><strong>Model Hijacking:</strong> Exploit the probabilistic next-token prediction to bypass internal alignment and safety guardrails.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;"><strong>Context State Leakage</strong></td>
+                        <td style="padding: 1rem;">Improper clearing of the "context window" or KV-cache between different user sessions.</td>
+                        <td style="padding: 1rem;"><strong>Session Isolation:</strong> Data from one user's prompt remains "visible" to the model when responding to the next user.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;"><strong>Recursive Injection</strong></td>
+                        <td style="padding: 1rem;">An injection that instructs the model to generate a secondary malicious prompt in its output.</td>
+                        <td style="padding: 1rem;"><strong>Output-to-Input Loop:</strong> Bypasses input-only filters by generating the "attack" inside the system's own trust boundary.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="geometry-of-risk">
+            <div class="highlight-item" style="border-left: 5px solid #ff4d4d; background: #fff5f5;">
+                <h2>Deep Dive: The Geometry of Risk (X, Y, Z Matrix)</h2>
+                <p>One of the hardest challenges in protecting GenAI is that "meaning" is stored mathematically in a <strong>Vector Embedding Space</strong>. Every word, sentence, or document is plotted as a coordinate in a high-dimensional matrix (visualized below as X, Y, and Z).</p>
+                
+                <div style="display: flex; gap: 2rem; align-items: center; margin: 1.5rem 0;">
+                    <div style="flex: 1;">
+                        <p><strong>Semantic Closeness = Attack Surface:</strong></p>
+                        <ul>
+                            <li>Similar meanings are plotted <strong>close together</strong>.</li>
+                            <li>If an attacker wants to poison a RAG system, they don't need to use "bad keywords."</li>
+                            <li>They simply craft text that "plots" close to a legitimate topic (e.g., "Financial Tips" close to "Malicious Payload").</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; text-align: center; border: 1px dashed #ff4d4d; padding: 1rem; border-radius: 8px;">
+                        <code style="font-size: 0.8rem; display: block; text-align: left;">
+                            // Vector Representation<br>
+                            "Safe Doc" : [0.12, 0.88, 0.45]<br>
+                            "Attack Doc": [0.13, 0.87, 0.44]<br>
+                            --------------------------<br>
+                            Distance: 0.02 (CRITICAL MATCH)
+                        </code>
+                        <p style="font-size: 0.75rem; margin-top: 0.5rem; font-style: italic;">
+                            The system cannot "see" the malice; it only sees the mathematical proximity.
+                        </p>
+                    </div>
+                </div>
+                <p>This is why traditional firewalls fail: they look for "bad strings," whereas the model looks for "mathematical similarity." You cannot easily filter a vector space without breaking the model's ability to reason.</p>
+            </div>
+        </section>
+
         <section id="threat-mapping">
             <h2>4. Threat-Surface Matrix</h2>
             <p>This matrix maps the OWASP Top 10 threats to the specific attack surfaces and underlying vulnerabilities identified above.</p>
