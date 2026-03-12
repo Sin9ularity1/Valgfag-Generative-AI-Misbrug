@@ -180,7 +180,24 @@
                         </p>
                     </div>
                 </div>
-                <p>This is why traditional firewalls fail: they look for "bad strings," whereas the model looks for <strong>mathematical similarity</strong>. You cannot easily filter a vector space without breaking the model's ability to reason.</p>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3>Why does the AI choose the "Attack Doc"?</h3>
+                    <p>In a RAG (Retrieval-Augmented Generation) system, the AI doesn't just read everything; it uses a <strong>"Top-K" retrieval</strong> strategy. When a user asks a question, the system looks for the <em>K</em> most mathematically similar items in the vector database.</p>
+                    <p>If an attacker crafts a document that is slightly "closer" to the user's query than the real answer, the system will prioritize the malicious document. The AI then treats this document as an <strong>authoritative source</strong>, effectively inviting the attacker into the model's inner reasoning loop.</p>
+                </div>
+
+                <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <h3>Can We Prevent This? (The Mitigation Challenge)</h3>
+                    <p>Stopping this is notoriously difficult because it's a fundamental property of how AI "understands" language. However, several mitigation strategies are currently being developed:</p>
+                    <ul>
+                        <li style="margin-bottom: 0.5rem;"><strong>Semantic Re-Ranking:</strong> Using a second, more powerful model to "double-check" the retrieved documents before they reach the main LLM. This is effective but adds significant latency and cost.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Vector Outlier Detection:</strong> Monitoring the vector database for "anomalous" embeddings that don't fit the expected patterns of the organization's data.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Instruction-Tuned Embeddings:</strong> Training the "vectorizer" to specifically distinguish between <em>helpful information</em> and <em>malicious instructions</em>, though this is still an active area of research.</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--text-primary);">The Bottom Line:</p>
+                    <p>You cannot easily "filter" a vector space like you can a traditional database. As long as we use mathematical similarity to retrieve data, attackers will use mathematical proximity to exploit it.</p>
+                </div>
             </div>
         </section>
 
