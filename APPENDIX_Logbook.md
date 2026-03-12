@@ -77,17 +77,37 @@ This week I was able to document the remaining 9 OWASP LLM vulnerabilities using
 
 ---
 
-## Week 10 – TBD
-### Summary: TBD
-### Tasks: TBD
-### Deliverables: TBD
+## Week 10 – Website navigation fixes + Appendixes
+### Summary
+This week I focused on making the website function in a logical way that the reader/user would be able to find the information they needed. I also moved some aspects of the website to an Appendix, such as the logbook, as it was using up too much of the websites maximum wordcount of 24,000(2400 chars pr page(10pg max)). 
+### Tasks
+- Fix website navigational issues in the research pages
+- Move unused/ unnecessary pages to Appendix
+### Deliverables
+- More functional navigation in the research section of the website
+- Appendices
+    - Logbook
 
 ---
 
-## Week 11 – TBD
-### Summary: TBD
-### Tasks: TBD
-### Deliverables: TBD
+## Week 11 – A shift from ***What***, to ***Why*** and ***Where***
+### Summary
+During the previous weeks, the project focused on identifying and describing **what types of threats and misuse scenarios exist in Generative AI systems**, based on research on the OWASP Top 10 for LLM Applications.
+
+In Week 11 the focus shifts from describing the threats themselves to analysing **why these threats are possible and where they occur within a system's architecture**. This involves identifying underlying vulnerabilities in GenAI systems and mapping the different **attack surfaces** that attackers can exploit.
+### Tasks
+- Create a "Vulnerability & Attack Surface Analysis" section on the project website
+- Define the 4 key attack surfaces
+    - Prompt interface
+    - Model context window
+    - External tools / plugin layer
+    - Training pipeline
+- Cross-reference the previously analysed OWASP Top 10 threats with these attack surfaces
+- Present the relationships using a structured table or diagram
+### Deliverables
+- Completed Vulnerability & Attack Surface Analysis section on the website
+- A mapping table or visual diagram linking OWASP threats to the relevant attack surfaces
+- Updated project documentation describing the identified vulnerabilities
 
 ---
 
