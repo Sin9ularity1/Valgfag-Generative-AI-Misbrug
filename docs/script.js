@@ -78,7 +78,7 @@ function renderSidebar() {
     const appendixHtml = `
         <h2 style="margin-top: 2rem;">Technical Appendix</h2>
         <ul>
-            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">📄 Project Appendix (GitLab)</a></li>
+            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Appendix (GitLab)</a></li>
         </ul>`;
 
     sidebar.innerHTML = profileHtml + navHtml + appendixHtml;
