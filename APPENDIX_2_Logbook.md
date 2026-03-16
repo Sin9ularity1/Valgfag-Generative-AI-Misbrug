@@ -111,8 +111,11 @@ In Week 11 the focus shifts from describing the threats themselves to analysing 
 
 ---
 
-## Week 12 – TBD
-### Summary: TBD
+## Week 12 – Creating a vulnerable playground
+### Summary:
+During the previous weeks, the project outlined the different LLM0X vulnerabilities and then analysed the impact and severity of the individual risks. 
+
+In week 12
 ### Tasks: TBD
 ### Deliverables: TBD
 
