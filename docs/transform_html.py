@@ -53,9 +53,12 @@ def transform_file(file_path):
     # Global Navigation Update (Pruning About and Logbook)
     nav_html = f"""        <ul class="nav-links">
             <li><a href="{rel_root}index.html">Home</a></li>
-            <li><a href="{rel_root}project.html">Project</a></li>
+            <li><a href="{rel_root}learning-objectives.html">Learning Objectives</a></li>
             <li><a href="{rel_root}research.html">Research</a></li>
             <li><a href="{rel_root}analysis.html">Analysis</a></li>
+            <li><a href="{rel_root}demonstration.html">Demonstration</a></li>
+            <li><a href="{rel_root}mitigation.html">Mitigation</a></li>
+            <li><a href="{rel_root}reflections.html">Reflections</a></li>
         </ul>"""
     content = re.sub(r'<ul class="nav-links">.*?</ul>', nav_html, content, flags=re.DOTALL)
 
@@ -91,7 +94,7 @@ def transform_file(file_path):
 
     # 5. Correct Navigation Paths for research subdir
     if is_research_subdir:
-        links = ["index.html", "project.html", "research.html", "analysis.html", "style.css", "script.js"]
+        links = ["index.html", "learning-objectives.html", "research.html", "analysis.html", "style.css", "script.js"]
         for link in links:
             content = content.replace(f'href="{link}"', f'href="../{link}"')
             content = content.replace(f'src="{link}"', f'src="../{link}"')
@@ -104,7 +107,7 @@ def transform_file(file_path):
 
 root_dir = "/home/sin9ularity/Documents/Selvvalgt_fordybelse/Valgfag/docs"
 files_to_process = [
-    "index.html", "analysis.html", "project.html", "research.html"
+    "index.html", "analysis.html", "learning-objectives.html", "research.html"
 ]
 
 for f in files_to_process:

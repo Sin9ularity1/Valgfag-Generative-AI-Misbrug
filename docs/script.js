@@ -33,13 +33,13 @@ function renderSidebar() {
             { name: "Problem Statement", href: "#problem-statement" },
             { name: "Key Highlights", href: "#key-highlights" }
         ];
-    } else if (path.includes('project.html')) {
+    } else if (path.includes('learning-objectives.html')) {
         navLinks = [
+            { name: "Learning Objectives", href: "#læringsmål" },
             { name: "About", href: "#om_projektet" },
             { name: "Motivation", href: "#motivation" },
             { name: "Goals", href: "#maal" },
-            { name: "Milestones", href: "#milepaele" },
-            { name: "Learning Objectives", href: "#læringsmål" }
+            { name: "Milestones", href: "#milepaele" }
         ];
     } else if (path.includes('analysis.html')) {
         navLinks = [
