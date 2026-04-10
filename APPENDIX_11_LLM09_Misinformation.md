@@ -2,9 +2,9 @@
 
 ## 1. What is Misinformation
 
-Misinformation occurs when LLMs produce false or misleading information that appears credible. This can lead to security breaches, reputational damage, and legal liability. A major cause is hallucination, where the model fabricated content.[[OWASP]](https://genai.owasp.org/llmrisk/llm092025-misinformation/).
+Misinformation occurs when LLMs produce false or misleading information that appears credible. This can lead to security breaches, reputational damage, and legal liability. A major cause is hallucination, where the model fabricated content..
 
-Over-reliance on LLM-generated content without verification is a significant factor in the impact of this vulnerability.[[OWASP]](https://genai.owasp.org/llmrisk/llm092025-misinformation/).
+Over-reliance on LLM-generated content without verification is a significant factor in the impact of this vulnerability..
 
 **Potential impacts include:**
 
@@ -29,7 +29,7 @@ The model suggests non-existent or insecure software packages, potentially leadi
 
 ## 3. Prevention and Mitigation
 
-According to OWASP guidance, risk can be significantly reduced through the following strategies[[OWASP]](https://genai.owasp.org/llmrisk/llm092025-misinformation/):
+According to OWASP guidance, risk can be significantly reduced through the following strategies:
 
 - 3.1 RAG Integration: Use Retrieval-Augmented Generation to ground model responses in verified, factual external databases.
 - 3.2 Human Oversight: Implement mandatory human fact-checking for high-stakes information (medical, legal, financial).
