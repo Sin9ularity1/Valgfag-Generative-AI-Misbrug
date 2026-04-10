@@ -2,9 +2,9 @@
 
 ## 1. What is Unbounded Consumption
 
-Unbounded Consumption occurs when an LLM application allows users to conduct excessive inferences, leading to Denial of Service (DoS), economic losses (Denial of Wallet), or model theft..
+Unbounded Consumption occurs when an LLM application allows users to conduct excessive inferences, leading to Denial of Service (DoS), economic losses (Denial of Wallet), or model theft (OWASPGenAIProject Editor, 2025).
 
-The high computational cost of LLM inference makes them a prime target for resource exhaustion attacks..
+The high computational cost of LLM inference makes them a prime target for resource exhaustion attacks.
 
 **Potential impacts include:**
 
@@ -49,4 +49,4 @@ According to OWASP guidance, risk can be significantly reduced through the follo
 
 ## 5. References
 
-- [LLM10: Unbounded Consumption](https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/)
+- OWASPGenAIProject Editor. (2025). LLM10: Unbounded Consumption. https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/

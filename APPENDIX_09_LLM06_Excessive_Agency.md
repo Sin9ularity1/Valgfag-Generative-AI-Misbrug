@@ -2,9 +2,9 @@
 
 ## 1. What is Excessive Agency
 
-Excessive Agency occurs when an LLM-based system, granted the ability to call functions or interface with other systems, performs damaging actions due to unexpected or manipulated outputs. The root causes are typically excessive functionality, permissions, or autonomy..
+Excessive Agency occurs when an LLM-based system, granted the ability to call functions or interface with other systems, performs damaging actions due to unexpected or manipulated outputs. The root causes are typically excessive functionality, permissions, or autonomy (OWASPGenAIProject Editor, 2025). 
 
-This vulnerability is particularly dangerous in autonomous agents where the model can "decide" to call tools without direct human supervision..
+This vulnerability is particularly dangerous in autonomous agents where the model can "decide" to call tools without direct human supervision.
 
 **Potential impacts include:**
 
@@ -49,4 +49,4 @@ According to OWASP guidance, risk can be significantly reduced through the follo
 
 ## 5. References
 
-- [LLM06: Excessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/)
+- OWASPGenAIProject Editor. (2025). LLM06: Excessive Agency. https://genai.owasp.org/llmrisk/llm062025-excessive-agency/

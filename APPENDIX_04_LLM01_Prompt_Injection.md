@@ -2,7 +2,7 @@
 
 ## 1. What is Prompt Injection
 
-Prompt Injection is ranked as LLM01 in the OWASP Top 10 for Large Language Model Applications by OWASP.
+Prompt Injection is ranked as LLM01 in the OWASP Top 10 for Large Language Model Applications by OWASP (OWASPGenAIProject Editor, 2025).
 
 Prompt Injection occurs when an attacker manipulates the input to a Large Language Model (LLM) in order to override its intended behaviour. Instead of following its original system instructions or safety policies, the model follows malicious or misleading instructions embedded in user input or external data.
 
@@ -72,4 +72,4 @@ According to OWASP guidance, prompt injection cannot be fully eliminated, but ri
 
 ## References
 
-- [OWASP LLM01 Prompt Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)
+- OWASPGenAIProject Editor. (2025). LLM01: Prompt injection. https://genai.owasp.org/llmrisk/llm01-prompt-injection/

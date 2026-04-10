@@ -2,7 +2,7 @@
 
 ## 1. What is Data and Model Poisoning
 
-Data and Model Poisoning involves manipulating pre-training, fine-tuning, or embedding data to introduce vulnerabilities, backdoors, or biases, compromising model security and performance.
+Data and Model Poisoning involves manipulating pre-training, fine-tuning, or embedding data to introduce vulnerabilities, backdoors, or biases, compromising model security and performance (OWASPGenAIProject Editor, 2025).
 
 Because LLMs learn from their training data, if that data is intentionally corrupted, the model's fundamental reasoning and output generation can be compromised.
 
@@ -49,4 +49,4 @@ Organizations must verify the legitimacy of their data and implement robust vali
 
 ## 5. References
 
-- [OWASP LLM04: Data and Model Poisoning](https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/)
+- OWASPGenAIProject Editor. (2025). LLM04: Data and Model Poisoning. https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/

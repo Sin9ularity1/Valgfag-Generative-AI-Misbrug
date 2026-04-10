@@ -2,9 +2,9 @@
 
 ## 1. What is Misinformation
 
-Misinformation occurs when LLMs produce false or misleading information that appears credible. This can lead to security breaches, reputational damage, and legal liability. A major cause is hallucination, where the model fabricated content..
+Misinformation occurs when LLMs produce false or misleading information that appears credible (OWASPGenAIProject Editor, 2025). This can lead to security breaches, reputational damage, and legal liability. A major cause is hallucination, where the model fabricated content.
 
-Over-reliance on LLM-generated content without verification is a significant factor in the impact of this vulnerability..
+Over-reliance on LLM-generated content without verification is a significant factor in the impact of this vulnerability.
 
 **Potential impacts include:**
 
@@ -49,4 +49,4 @@ According to OWASP guidance, risk can be significantly reduced through the follo
 
 ## 5. References
 
-- [LLM09: Misinformation](https://genai.owasp.org/llmrisk/llm092025-misinformation/)
+- OWASPGenAIProject Editor. (2025). LLM09: Misinformation. https://genai.owasp.org/llmrisk/llm092025-misinformation/

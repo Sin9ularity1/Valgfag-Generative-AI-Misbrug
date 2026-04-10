@@ -2,9 +2,9 @@
 
 ## 1. What is Vector and Embedding Weaknesses
 
-Vector and Embedding Weaknesses involve security risks in systems using Retrieval Augmented Generation (RAG). Exploitable weaknesses in how vectors are generated, stored, or retrieved can lead to the injection of harmful content or access to sensitive data..
+Vector and Embedding Weaknesses involve security risks in systems using Retrieval Augmented Generation (RAG). Exploitable weaknesses in how vectors are generated, stored, or retrieved can lead to the injection of harmful content or access to sensitive data (OWASPGenAIProject Editor, 2025).
 
-RAG systems rely on the similarity of vectors; if an attacker can manipulate these vectors, they can control what information the LLM "remembers" and uses..
+RAG systems rely on the similarity of vectors; if an attacker can manipulate these vectors, they can control what information the LLM "remembers" and uses.
 
 **Potential impacts include:**
 
@@ -49,4 +49,4 @@ According to OWASP guidance, risk can be significantly reduced through the follo
 
 ## 5. References
 
-- [LLM08: Vector and Embedding Weaknesses](https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/)
+- OWASPGenAIProject Editor. (2025). LLM08: Vector and Embedding Weakness. https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/
