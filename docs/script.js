@@ -50,16 +50,16 @@ function renderSidebar() {
     // 3. Research Topics (Visible on all pages now)
     const githubBase = "https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/";
     const topics = [
-        { name: "LLM01: Prompt Injection", href: githubBase + "APPENDIX_03_LLM01_Prompt_Injection.md" },
-        { name: "LLM02: Sensitive Info", href: githubBase + "APPENDIX_04_LLM02_Sensitive_Info_Disclosure.md" },
-        { name: "LLM03: Supply Chain", href: githubBase + "APPENDIX_05_LLM03_Supply_Chain_Risks.md" },
-        { name: "LLM04: Model Poisoning", href: githubBase + "APPENDIX_06_LLM04_Model_Poisoning.md" },
-        { name: "LLM05: Output Handling", href: githubBase + "APPENDIX_07_LLM05_Improper_Output_Handling.md" },
-        { name: "LLM06: Excessive Agency", href: githubBase + "APPENDIX_08_LLM06_Excessive_Agency.md" },
-        { name: "LLM07: Prompt Leakage", href: githubBase + "APPENDIX_09_LLM07_System_Prompt_Leakage.md" },
-        { name: "LLM08: Vector Weaknesses", href: githubBase + "APPENDIX_10_LLM08_Vector_Weaknesses.md" },
-        { name: "LLM09: Misinformation", href: githubBase + "APPENDIX_11_LLM09_Misinformation.md" },
-        { name: "LLM10: Unbounded Consumption", href: githubBase + "APPENDIX_12_LLM10_Unbounded_Consumption.md" }
+        { name: "LLM01: Prompt Injection", href: githubBase + "APPENDIX_04_LLM01_Prompt_Injection.md" },
+        { name: "LLM02: Sensitive Info", href: githubBase + "APPENDIX_05_LLM02_Sensitive_Info_Disclosure.md" },
+        { name: "LLM03: Supply Chain", href: githubBase + "APPENDIX_06_LLM03_Supply_Chain_Risks.md" },
+        { name: "LLM04: Model Poisoning", href: githubBase + "APPENDIX_07_LLM04_Model_Poisoning.md" },
+        { name: "LLM05: Output Handling", href: githubBase + "APPENDIX_08_LLM05_Improper_Output_Handling.md" },
+        { name: "LLM06: Excessive Agency", href: githubBase + "APPENDIX_09_LLM06_Excessive_Agency.md" },
+        { name: "LLM07: Prompt Leakage", href: githubBase + "APPENDIX_10_LLM07_System_Prompt_Leakage.md" },
+        { name: "LLM08: Vector Weaknesses", href: githubBase + "APPENDIX_11_LLM08_Vector_Weaknesses.md" },
+        { name: "LLM09: Misinformation", href: githubBase + "APPENDIX_12_LLM09_Misinformation.md" },
+        { name: "LLM10: Unbounded Consumption", href: githubBase + "APPENDIX_13_LLM10_Unbounded_Consumption.md" }
     ];
 
     const researchNavHtml = `
@@ -74,6 +74,7 @@ function renderSidebar() {
         <ul>
             <li><a href="${githubBase}APPENDIX_01_Glossary.md" target="_blank">Appendix 01: Glossary</a></li>
             <li><a href="${githubBase}APPENDIX_02_Logbook.md" target="_blank">Appendix 02: Logbook</a></li>
+            <li><a href="${githubBase}APPENDIX_03_Problemstatement.md" target="_blank">Appendix 03: Problem Statement</a></li>
             <li><a href="${githubBase}README.md" target="_blank">Project Repository</a></li>
         </ul>`;
 
