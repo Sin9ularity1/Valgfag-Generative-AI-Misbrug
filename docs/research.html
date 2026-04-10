@@ -21,8 +21,6 @@
             <li><a href="research.html" class="active">Research</a></li>
             <li><a href="analysis.html">Analysis</a></li>
             <li><a href="demonstration.html">Demonstration</a></li>
-            <li><a href="mitigation.html">Mitigation</a></li>
-            <li><a href="reflections.html">Reflections</a></li>
         </ul>
     </nav>
 </header>
@@ -48,9 +46,13 @@
         <section id="research-home">
             <h1>Cybersecurity Research</h1>
             <p class="lead">Exploring the OWASP Top 10 vulnerabilities for Large Language Models.</p>
-            <p>This section provides a comprehensive overview of various generative AI misuse scenarios, focusing on the critical security risks identified in the OWASP Top 10 for LLMs. Each research topic delves into specific attack vectors, real-world implications, and strategic countermeasures.</p>
             
-            <div class="research-grid">
+            <div style="margin-top: 2rem;">
+                <h2 style="color: var(--accent-color);">1. The OWASP Top 10 for LLMs</h2>
+                <p>This section provides a systematic overview of generative AI misuse scenarios, focusing on the critical security risks identified by OWASP. Each card below links to a detailed technical appendix covering specific attack vectors and countermeasures.</p>
+            </div>
+
+            <div class="research-grid" style="margin-top: 2rem;">
                 <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_04_LLM01_Prompt_Injection.md" target="_blank" class="research-card">
                     <span class="card-number">LLM01</span>
                     <h3>Prompt Injection</h3>
@@ -123,7 +125,7 @@
             </div>
 
             <div style="margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
-                <h3>Next Step: Architectural Analysis</h3>
+                <h2 style="color: var(--accent-color);">2. Next Step: Architectural Analysis</h2>
                 <p>After exploring the individual vulnerabilities, we can now synthesize these findings into a holistic view of the GenAI attack surface and its technical root causes.</p>
                 <a href="analysis.html" class="button">View Vulnerability Analysis &rarr;</a>
             </div>
