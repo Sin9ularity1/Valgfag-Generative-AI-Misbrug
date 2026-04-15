@@ -50,79 +50,191 @@
             
             <div style="margin-top: 2rem;">
                 <h2>The OWASP Top 10 for LLMs</h2>
-                <p>This section provides a systematic overview of generative AI misuse scenarios, focusing on the critical security risks identified by OWASP. Each card below links to a detailed technical appendix covering specific attack vectors and countermeasures.</p>
+                <p>This section provides a systematic overview of generative AI misuse scenarios, focusing on the critical security risks identified by OWASP. Each entry below provides a technical summary of the vulnerability and its core remediations, bridging the gap between high-level concepts and the detailed analyses found in the appendices.</p>
             </div>
 
-            <div class="research-grid" style="margin-top: 2rem;">
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_04_LLM01_Prompt_Injection.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM01</span>
-                    <h3>Prompt Injection</h3>
-                    <p>Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions.</p>
-                    <small>Appendix 04 &rarr;</small>
-                </a>
+            <div class="vulnerability-list" style="margin-top: 3rem;">
+                
+                <section id="llm01" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM01</span>
+                        <h2>Prompt Injection</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions. This targets the model's reasoning process rather than a parser, allowing attackers to socially engineer the AI into unsafe behavior through direct (user input) or indirect (web pages, files) instructions.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Use strong, boundary-defining system prompts.</li>
+                            <li>Enforce structured output formats (e.g., JSON schemas) and validate them.</li>
+                            <li>Implement robust input/output filtering for suspicious patterns.</li>
+                            <li>Apply the principle of least privilege for model tool access.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_04_LLM01_Prompt_Injection.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 04 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_05_LLM02_Sensitive_Info_Disclosure.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM02</span>
-                    <h3>Sensitive Info Disclosure</h3>
-                    <p>Accidental revelation of confidential data, PII, or proprietary secrets through model outputs.</p>
-                    <small>Appendix 05 &rarr;</small>
-                </a>
+                <section id="llm02" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM02</span>
+                        <h2>Sensitive Info Disclosure</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Accidental revelation of confidential data, PII, or proprietary secrets through model outputs. This can occur if sensitive data is included in training sets or if a model is manipulated into revealing its internal configuration or user-specific data.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Sanitize and scrub sensitive content from training datasets.</li>
+                            <li>Implement robust input validation to detect extraction attempts.</li>
+                            <li>Use privacy-preserving techniques like differential privacy or federated learning.</li>
+                            <li>Maintain clear user policies on data usage and retention.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_05_LLM02_Sensitive_Info_Disclosure.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 05 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_06_LLM03_Supply_Chain_Risks.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM03</span>
-                    <h3>Supply Chain Risks</h3>
-                    <p>Vulnerabilities arising from third-party components, datasets, and pre-trained models.</p>
-                    <small>Appendix 06 &rarr;</small>
-                </a>
+                <section id="llm03" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM03</span>
+                        <h2>Supply Chain Risks</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Vulnerabilities arising from third-party components, datasets, and pre-trained models. Compromises at any point in the supply chain—from data scrapers to model hubs—can introduce hidden backdoors, biases, or malware.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Rigorously vet all third-party data and pre-trained model sources.</li>
+                            <li>Maintain a Software Bill of Materials (SBOM) to track dependencies.</li>
+                            <li>Verify component integrity using cryptographic hashes and signatures.</li>
+                            <li>Conduct regular AI Red Teaming on integrated components.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_06_LLM03_Supply_Chain_Risks.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 06 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_07_LLM04_Model_Poisoning.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM04</span>
-                    <h3>Model Poisoning</h3>
-                    <p>Corrupting training data or fine-tuning processes to introduce hidden backdoors or biases.</p>
-                    <small>Appendix 07 &rarr;</small>
-                </a>
+                <section id="llm04" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM04</span>
+                        <h2>Model Poisoning</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Intentionally corrupting training data or fine-tuning processes to introduce vulnerabilities, backdoors, or biases. This compromises the model's fundamental reasoning and can be used to bypass security controls or spread misinformation.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Strictly track and verify the lineage of all training data.</li>
+                            <li>Implement anomaly detection to identify malicious patterns in datasets.</li>
+                            <li>Use isolated sandboxing for all training and fine-tuning processes.</li>
+                            <li>Rigorously vet data vendors and third-party dataset suppliers.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_07_LLM04_Model_Poisoning.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 07 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_08_LLM05_Improper_Output_Handling.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM05</span>
-                    <h3>Improper Output Handling</h3>
-                    <p>Failure to validate LLM-generated content, leading to XSS, CSRF, or SSRF risks.</p>
-                    <small>Appendix 08 &rarr;</small>
-                </a>
+                <section id="llm05" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM05</span>
+                        <h2>Improper Output Handling</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Failure to validate, sanitize, and handle LLM-generated content before passing it to downstream systems. This can enable traditional attacks like XSS, SQL injection, and Remote Code Execution (RCE) via the model's output.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Apply Zero-Trust principles: treat model output as untrusted user input.</li>
+                            <li>Use context-aware encoding (e.g., HTML escaping, parameterized SQL queries).</li>
+                            <li>Employ strict Content Security Policies (CSP) to mitigate XSS risks.</li>
+                            <li>Sanitize all responses before passing them to backend functions or shells.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_08_LLM05_Improper_Output_Handling.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 08 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_09_LLM06_Excessive_Agency.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM06</span>
-                    <h3>Excessive Agency</h3>
-                    <p>Granting models too much autonomy or access to sensitive functions and internal tools.</p>
-                    <small>Appendix 09 &rarr;</small>
-                </a>
+                <section id="llm06" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM06</span>
+                        <h2>Excessive Agency</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Granting models too much autonomy or access to sensitive functions. When a model can call tools or APIs without sufficient oversight, unexpected or manipulated outputs can lead to damaging real-world actions.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Enforce the Principle of Least Privilege for all model-accessible tools.</li>
+                            <li>Implement mandatory human-in-the-loop approval for high-impact actions.</li>
+                            <li>Prefer specific, granular functions over broad, open-ended ones.</li>
+                            <li>Perform authorization checks in downstream systems, not just the LLM.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_09_LLM06_Excessive_Agency.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 09 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_10_LLM07_System_Prompt_Leakage.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM07</span>
-                    <h3>System Prompt Leakage</h3>
-                    <p>Techniques used to extract the underlying system instructions that govern LLM behavior.</p>
-                    <small>Appendix 10 &rarr;</small>
-                </a>
+                <section id="llm07" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM07</span>
+                        <h2>System Prompt Leakage</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Techniques used to extract the underlying system instructions (system prompts) that govern LLM behavior. Disclosure reveals internal guardrails and logic, which can then be bypassed by attackers.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Externalize credentials—never include secrets or keys in system prompts.</li>
+                            <li>Use external guardrails to filter output for leaked system instructions.</li>
+                            <li>Implement multiple specialized agents with restricted, narrow prompts.</li>
+                            <li>Do not rely solely on system prompts for security; enforce independent controls.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_10_LLM07_System_Prompt_Leakage.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 10 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_11_LLM08_Vector_Weaknesses.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM08</span>
-                    <h3>Vector Weaknesses</h3>
-                    <p>Exploiting vulnerabilities in vector databases and embedding-based retrieval (RAG) systems.</p>
-                    <small>Appendix 11 &rarr;</small>
-                </a>
+                <section id="llm08" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM08</span>
+                        <h2>Vector Weaknesses</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Security risks in systems using Retrieval Augmented Generation (RAG). Weaknesses in how vectors are generated, stored, or retrieved can lead to unauthorized data access or the injection of harmful knowledge.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Implement permission-aware retrieval within the vector database.</li>
+                            <li>Validate and sanitize all documents before they are embedded.</li>
+                            <li>Ensure logical partitioning between different users in shared vector stores.</li>
+                            <li>Maintain immutable audit logs of all data retrieval activities.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_11_LLM08_Vector_Weaknesses.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 11 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_12_LLM09_Misinformation.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM09</span>
-                    <h3>Misinformation</h3>
-                    <p>The propensity for LLMs to generate factually incorrect or "hallucinated" information.</p>
-                    <small>Appendix 12 &rarr;</small>
-                </a>
+                <section id="llm09" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM09</span>
+                        <h2>Misinformation</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> The generation of factually incorrect or "hallucinated" information. Over-reliance on unverified AI content can lead to security breaches, legal liability, and reputational damage.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Use RAG to ground model responses in verified, factual external data.</li>
+                            <li>Implement mandatory human fact-checking for high-stakes information.</li>
+                            <li>Clearly label AI-generated content and communicate model limitations.</li>
+                            <li>Use automated tools to identify and flag potential fabricated content.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_12_LLM09_Misinformation.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 12 &rarr;</a>
+                    </div>
+                </section>
 
-                <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_13_LLM10_Unbounded_Consumption.md" target="_blank" class="research-card">
-                    <span class="card-number">LLM10</span>
-                    <h3>Unbounded Consumption</h3>
-                    <p>Resource exhaustion and DoS attacks through excessive or complex model inference requests.</p>
-                    <small>Appendix 13 &rarr;</small>
-                </a>
+                <section id="llm10" class="vulnerability-item">
+                    <div class="vulnerability-header">
+                        <span class="vulnerability-tag">LLM10</span>
+                        <h2>Unbounded Consumption</h2>
+                    </div>
+                    <div class="vulnerability-body">
+                        <p><strong>Description:</strong> Resource exhaustion attacks (DoS) or "Denial of Wallet" via excessive inference requests. High computational costs make LLMs targets for crashing services or depleting budgets.</p>
+                        <p><strong>Key Remediations:</strong></p>
+                        <ul>
+                            <li>Implement strict rate limiting and token quotas per user.</li>
+                            <li>Enforce maximum input lengths and context window constraints.</li>
+                            <li>Set hard budget caps and monitor resource consumption patterns.</li>
+                            <li>Continuous resource monitoring to detect anomalous usage patterns.</li>
+                        </ul>
+                        <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_13_LLM10_Unbounded_Consumption.md" target="_blank" class="appendix-link">Read full technical analysis in Appendix 13 &rarr;</a>
+                    </div>
+                </section>
+
             </div>
 
             <div style="margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
