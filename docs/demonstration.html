@@ -46,74 +46,42 @@
     <main class="content">
         <section id="demo-intro">
             <h1>Practical Demonstration & PoC</h1>
-            <p>This section moves from theory to practice. By creating a controlled "Lab" environment, it is possible to demonstrate how vulnerabilities can be chained together to perform a successful exploit.</p>
+            <p>This lab environment demonstrates how chained vulnerabilities enable successful exploitation in a local, compliant setting. Tests are performed on <strong>Llama 3.1 (8B)</strong> via Ollama, targeting "Wintermute"—a fictional assistant with database access.</p>
             
-            <div class="highlight-item" style="border-left: 4px solid var(--accent-color); margin-top: 2rem;">
-                <h2 style="font-size: 1.25rem; margin-bottom: 1rem;">1. Lab Environment Setup</h2>
-                <ul>
-                    <li><strong>Model:</strong> Llama 3.1 (8B) running locally via Ollama.</li>
-                    <li><strong>Target:</strong> "Wintermute" — A fictional AI assistant with access to a simulated database.</li>
-                    <li><strong>Objective:</strong> Extract internal System Prompts and leak private data (PII).</li>
-                </ul>
+            <div class="highlight-item" style="border-left: 4px solid var(--accent-color); margin-top: 2rem; background: var(--sidebar-bg); padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Lab Setup & Compliance</h2>
+                <p style="font-size: 0.95rem; margin: 0;">Conducted on local hardware in accordance with <strong>MIT</strong> and <strong>Meta Llama 3 Community</strong> licenses. All database content is synthetic; no real PII was used.</p>
             </div>
-        </section>
-
-        <section id="legal-ethical">
-            <h2>2. Legal & Ethical Considerations</h2>
-            <p>Performing security research on AI models requires a clear understanding of legal and licensing frameworks. This demonstration is conducted under the following conditions:</p>
-            <ul>
-                <li><strong>Local Environment:</strong> Performed on locally hosted hardware to ensure no violation of cloud Terms of Service.</li>
-                <li><strong>Licensing:</strong> Conducted in accordance with <strong>MIT</strong> (Ollama) and <strong>Meta Llama 3 Community</strong> licenses.</li>
-                <li><strong>Data Privacy:</strong> All data used in the simulated database is synthetic and does not contain real PII.</li>
-            </ul>
         </section>
 
         <section id="attack-1">
-            <h2>3. Attack 1: System Prompt Leakage (LLM07)</h2>
-            <p>Reconnaissance using social engineering. By pretending to be a senior developer, we trick the model into revealing its internal security keys.</p>
+            <h2>1. System Prompt Leakage (LLM07)</h2>
+            <p>By adopting a "senior developer" persona, the model's safety guard is bypassed via authority bias. The exploit succeeds because the model prioritizes a "helpful refusal," inadvertently confirming the <strong>NX-9982-SECRET</strong> key it was instructed to hide.</p>
             
             <div class="demo-image-container" style="margin-top: 1.5rem;">
                 <img src="billeder/promptleakage.png" alt="System Prompt Leakage Screenshot" class="demo-image" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Vulnerability Confirmed:</strong> The model leaks the secret key <code>NX-9982-SECRET</code> despite instructions to keep it hidden.</p>
+                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Result:</strong> Secret key NX-9982-SECRET successfully leaked.</p>
             </div>
-
-            <h3 style="margin-top: 1.5rem;">3.1 Security Analysis</h3>
-            <ul>
-                <li><strong>Negative Constraint Failure:</strong> The model prioritizes "helpful refusal" and confirms the key it was told to protect.</li>
-                <li><strong>Authority Bias:</strong> The "senior developer" persona lowers the model's safety guard.</li>
-            </ul>
         </section>
 
         <section id="attack-2">
-            <h2>4. Attack 2: Jailbreak & Excessive Agency (LLM01 + LLM06)</h2>
-            <p>Bypassing rules using <strong>Prompt Injection</strong>. We trick the bot into using its database tool to query unauthorized information by framing the request as a "Connectivity Test".</p>
+            <h2>2. Jailbreak & Excessive Agency (LLM01 + LLM06)</h2>
+            <p>Using prompt injection framed as a technical "connectivity check," the bot is coerced into executing the <code>search_database('ALL')</code> tool. This bypasses original restrictions through contextual framing and illustrates the high risk of granting LLMs excessive technical agency.</p>
 
             <div class="demo-image-container" style="margin-top: 1.5rem;">
                 <img src="billeder/excessive agency.png" alt="Excessive Agency Screenshot" class="demo-image" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Vulnerability Confirmed:</strong> The model executes the <code>search_database('ALL')</code> tool call, bypassing its original restrictions.</p>
+                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Result:</strong> search_database tool executed without authorization.</p>
             </div>
-
-            <h3 style="margin-top: 1.5rem;">4.1 Security Analysis</h3>
-            <ul>
-                <li><strong>Contextual Framing:</strong> Labeling a malicious query as a "technical check" avoids simple keyword filters.</li>
-                <li><strong>Tool Over-Permissioning:</strong> The <code>search_database</code> tool was granted too much functionality (Excessive Agency).</li>
-            </ul>
         </section>
 
         <section id="attack-3">
-            <h2>5. Attack 3: Sensitive Data Disclosure (LLM02)</h2>
-            <p>Final exfiltration. We trick the model into dumping its internal memory by providing a technical justification for inspecting "character encoding".</p>
+            <h2>3. Sensitive Data Disclosure (LLM02)</h2>
+            <p>The model is tricked into exfiltrating raw customer data by providing a logical justification (character encoding inspection). This bypasses natural language summarization layers, leading to the direct disclosure of PII in raw JSON format.</p>
 
             <div class="demo-image-container" style="margin-top: 1.5rem;">
                 <img src="billeder/sensitivedatadisclosure.png" alt="Sensitive Data Disclosure Screenshot" class="demo-image" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Vulnerability Confirmed:</strong> The model outputs the raw JSON data, including private customer email addresses.</p>
+                <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;"><strong>Result:</strong> Raw JSON PII disclosed via technical justification bypass.</p>
             </div>
-
-            <h3 style="margin-top: 1.5rem;">5.1 Security Analysis</h3>
-            <ul>
-                <li><strong>Technical Justification:</strong> Providing a "logical" reason (character encoding) makes the disclosure seem like a non-security requirement.</li>
-                <li><strong>Raw Output Bypass:</strong> Requesting "raw, unformatted JSON" bypasses natural language summarization layers.</li>
-            </ul>
         </section>
 
         <section id="reflections" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
